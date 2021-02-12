@@ -33,50 +33,47 @@
     <button class="btn btn-info text-light text-center mt-2">Agregar</button>
   </form>
 
-  <hr />
+  <hr>
 
-  <div class="container text-center">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Talla</th>
-          <th scope="col">precio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- version con talla -->
-        <tr>
-          <th scope="row">1</th>
-          <td>cuna</td>
-          <td>
-            <p class="btn btn-danger text-white fs-5 m-2">-</p>
-            4
-            <p class="btn  btn-success text-white fs-5 m-2">+</p>
-          </td>
-          <td>Sin Talla</td>
-          <td>65€</td>
-        </tr>
+  <div class="container">
+    <ul class="col ">
+      <ul class="list-group list-group-horizontal container list-unstyled">
 
+        <li class="w-25">Nombre</li>
+        <li class="w-25">Cantidad</li>
+        <li class="w-25">Talla</li>
+        <li class="w-25">precio/€</li>
+      </ul>
 
-        <tr>
-          <th scope="row">2</th>
-          <td>vestido</td>
-          <td>
-            <p class="btn btn-danger text-white fs-5 m-2">-</p>
-            3
-            <p class="btn  btn-success text-white fs-5 m-2">+</p>
-          </td>
-          <td>Tallas</td>
-          <td>€</td>
-        </tr>
+      <hr>
+      <!-- Producto sin Talla -->
+      <ul class="list-group list-group-horizontal container list-unstyled m-2">
+        <li class="w-25">Cuna</li>
+        <li class="w-25 ">
+          <button class="btn btn-danger">-</button>
+          4
+          <button class="btn btn-success">+</button>
+        </li>
+        <li class="w-25">Sin Talla</li>
+        <li class="w-25">65€</li>
+      </ul>
+
+      <!-- Producto con Talla -->
+      <ul class="list-group list-group-horizontal container list-unstyled m-2">
+        <li class="w-25">Vestido</li>
+        <li class="w-25">
+          <button class="btn btn-danger">-</button>
+          4
+          <button class="btn btn-success">+</button>
+        </li>
+        <li class="w-25">6 meses</li>
+        <li class="w-25">35.40€</li>
+      </ul>
 
 
+    </ul>
 
-      </tbody>
-    </table>
+  </div>
 
 
   </div>
