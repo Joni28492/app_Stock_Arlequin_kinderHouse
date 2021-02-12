@@ -77,7 +77,7 @@ const init = () => {
   };
 
   
-
+  /*
   //Pruebas LocalStorage
   const arrProductos =[ productoClasePrueba, producto2];
   //console.log(localStorage.getItem('Producto'));
@@ -85,7 +85,7 @@ const init = () => {
   //console.log(productoString);//undefined
   const productoNoParse  = localStorage.getItem('Producto');
   console.log(JSON.parse(productoNoParse));
-
+  */
   
 };
 
