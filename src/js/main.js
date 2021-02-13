@@ -1,4 +1,5 @@
-import { productoClasePrueba, Producto } from "./classes/producto.class";
+
+
 
 let arrLogos = [
   "Baltasar.png",
@@ -21,10 +22,14 @@ const temas = [
 "alert-danger"
 ]
 
-
+//HTML
 const body = document.body;
-
 const logo = document.querySelector("img");
+const btnAgregar = document.querySelector('#agregar');
+let btnIncrementar = document.querySelectorAll('#increase');
+let btnDecrementar = document.querySelectorAll('#derecease');
+
+
 
 const asignarLogo = (png) => {
   logo.src = `./assets/${png}`;
@@ -35,8 +40,10 @@ const cambiarTema = (tema) =>{
 }
 
 
-//con el click modificamos el logo y el tema
-logo.addEventListener('click', ()=>{
+const eventos = () =>{
+  //con el click modificamos el logo y el tema
+  logo.addEventListener('click', ()=>{
+
   const separado = logo.src.split('/');
   let src = separado[separado.length - 1];
   let idx=0;
@@ -48,11 +55,34 @@ logo.addEventListener('click', ()=>{
     }       
 
   });
-  
+
   asignarLogo(arrLogos[idx]);
   cambiarTema(temas[idx]);
-  
-})
+
+  });
+
+  //btn agregar
+  btnAgregar.addEventListener('click', () =>{
+    console.log('btn agregar funciona');
+  });
+
+  //btn para incrementar cantidad
+  btnIncrementar.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      console.log('btn incrementar');
+    });
+  });
+
+  //btn para incrementar cantidad
+  btnDecrementar.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      console.log('btn decrementar');
+    });
+  });
+
+}
+
+
 
 
 
@@ -61,6 +91,11 @@ logo.addEventListener('click', ()=>{
 
 const init = () => {
   asignarLogo(arrLogos[3]);
+  
+  eventos();
+
+  
+  
   // productoPruebaSinTalla.imprimirClase();
   /*const producto1 = {
     id: 45,

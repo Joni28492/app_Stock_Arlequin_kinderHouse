@@ -1,3 +1,6 @@
-const { init } = require("./js/main");
+
+import { init } from "./js/main";
 
 init();
+
+

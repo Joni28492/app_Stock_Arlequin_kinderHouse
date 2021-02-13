@@ -19,7 +19,7 @@
   <form class="text-center">
     <!-- inputs para e formulario -->
 
-    <input class="mt-2" type="text" placeholder="Nombre" />
+    <input id="nombre" class="mt-2" type="text" placeholder="Nombre" />
     <input class="mt-2" type="number" placeholder="Cantidad" />
     <select class="mt-2">
       <option selected>--sin talla--</option>
@@ -30,7 +30,7 @@
     </select>
     <input class="mt-2" type="text" placeholder="precio" />
     <br />
-    <button class="btn btn-info text-light text-center mt-2">Agregar</button>
+    <a id="agregar" class="btn btn-info text-light text-center mt-2">Agregar</a>
   </form>
 
   <hr>
@@ -50,9 +50,9 @@
       <ul class="list-group list-group-horizontal container list-unstyled m-2">
         <li class="w-25">Cuna</li>
         <li class="w-25 ">
-          <button class="btn btn-danger">-</button>
+          <button id="derecease" class="btn btn-danger">-</button>
           4
-          <button class="btn btn-success">+</button>
+          <button id="increase" class="btn btn-success">+</button>
         </li>
         <li class="w-25">Sin Talla</li>
         <li class="w-25">65€</li>
@@ -62,9 +62,9 @@
       <ul class="list-group list-group-horizontal container list-unstyled m-2">
         <li class="w-25">Vestido</li>
         <li class="w-25">
-          <button class="btn btn-danger">-</button>
+          <button id="derecease" class="btn btn-danger">-</button>
           4
-          <button class="btn btn-success">+</button>
+          <button id="increase" class="btn btn-success">+</button>
         </li>
         <li class="w-25">6 meses</li>
         <li class="w-25">35.40€</li>
