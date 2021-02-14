@@ -1,21 +1,26 @@
-class Producto {
-  constructor(id,nombre, cantidad, precio) {
-    this.id=id;
-    this.nombre = nombre;
+const {v4: uuidv4} = require('uuid');
+
+export class Producto {
+
+  
+  
+
+
+  constructor(producto, cantidad, talla, precio) {
+    this.producto = producto;
+    this.id = uuidv4();//genera un hash unico
     this.cantidad = cantidad;
+    this.talla = talla;
     this.precio = precio;
   }
 
   imprimirClase() {
-    console.log(`${this.nombre}, ${this.cantidad}, ${this.precio}€`);
+    console.log(`${this.producto}, ${this.cantidad}, ${this.precio}€`);
   }
-
-  
-  
 
 
 }
 
-const productoClasePrueba = new Producto("Vestido", 4, 45, 90);
 
-export { Producto, productoClasePrueba  };
+
+

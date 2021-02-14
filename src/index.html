@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Webpack</title>
+  <title>Arlequín-KinderHouse App Stock</title>
+  <link rel="icon" href="./assets/Main.png" type="image/png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
 </head>
@@ -13,22 +14,22 @@
 <body class="alert-success">
   <header class="text-center">
     <img src="./assets/Main.png" alt="arlequin logo" width="220" />
-    <h1>Arlequín KinderHouse</h1>
+    <h1 class="p-2">Arlequín KinderHouse</h1>
   </header>
 
   <form class="text-center">
     <!-- inputs para e formulario -->
 
     <input id="nombre" class="mt-2" type="text" placeholder="Nombre" />
-    <input class="mt-2" type="number" placeholder="Cantidad" />
-    <select class="mt-2">
+    <input id="cantidad" class="mt-2" type="number" placeholder="Cantidad" />
+    <select id="talla" class="mt-2">
       <option selected>--sin talla--</option>
       <option value="1">3 meses</option>
       <option value="2">6 meses</option>
       <option value="3">1 año</option>
       <option value="4">18 meses</option>
     </select>
-    <input class="mt-2" type="text" placeholder="precio" />
+    <input id="precio" class="mt-2" type="number" placeholder="precio" />
     <br />
     <a id="agregar" class="btn btn-info text-light text-center mt-2">Agregar</a>
   </form>
@@ -36,7 +37,7 @@
   <hr>
 
   <div class="container">
-    <ul class="col ">
+    <ul id="listaProductos" class="col ">
       <ul class="list-group list-group-horizontal container list-unstyled">
 
         <li class="w-25">Nombre</li>
@@ -46,30 +47,34 @@
       </ul>
 
       <hr>
-      <!-- Producto sin Talla -->
+
+      <!-- PLANTILLA HTML
+        Producto sin Talla
       <ul class="list-group list-group-horizontal container list-unstyled m-2">
         <li class="w-25">Cuna</li>
         <li class="w-25 ">
-          <button id="derecease" class="btn btn-danger">-</button>
+          <button  class="derecease btn btn-danger">-</button>
           4
-          <button id="increase" class="btn btn-success">+</button>
+          <button  class="increase btn btn-success">+</button>
         </li>
         <li class="w-25">Sin Talla</li>
         <li class="w-25">65€</li>
+        <button  class="eliminarProducto btn btn-danger ">X</button>
       </ul>
 
-      <!-- Producto con Talla -->
+          Producto con Talla 
       <ul class="list-group list-group-horizontal container list-unstyled m-2">
         <li class="w-25">Vestido</li>
         <li class="w-25">
-          <button id="derecease" class="btn btn-danger">-</button>
+          <button  class="derecease btn btn-danger">-</button>
           4
-          <button id="increase" class="btn btn-success">+</button>
+          <button  class="increase btn btn-success">+</button>
         </li>
         <li class="w-25">6 meses</li>
         <li class="w-25">35.40€</li>
+        <button  class="eliminarProducto btn btn-danger ">X</button>
       </ul>
-
+       -->
 
     </ul>
 
@@ -79,6 +84,13 @@
   </div>
 
   <hr />
+
+  <div class="row container-fluid m-2">
+
+    <button id="descargar" class="col btn alert-success  w-50 m-2">Descargar JSON</button>
+    <button id="importar" class="col btn alert-success  w-50 m-2">Importar JSON</button>
+  </div>
+
   <footer class="text-center">
     &copy Arlequín-KinderHouse & Joni Fernández
   </footer>
