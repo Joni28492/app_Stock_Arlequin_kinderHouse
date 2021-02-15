@@ -63,7 +63,11 @@ const selectOption = (talla) =>{
   const tallaTemp = (talla=="1") ? "3 meses":
                     (talla=="2") ? "6 meses": 
                     (talla=="3") ? "1 año":
-                    (talla=="4") ? "18 meses":"--sin talla--";
+                    (talla=="4") ? "2 años":
+                    (talla=="5") ? "3 años":
+                    (talla=="6") ? "4 años":
+                    (talla=="7") ? "5 años":                    
+                    (talla=="8") ? "6 años":"--sin talla--";
 
   return tallaTemp;
 }
@@ -117,6 +121,8 @@ const eventos = () =>{
 
   });
 
+  
+
   //btn agregar
   btnAgregar.addEventListener('click', () =>{
     
@@ -163,11 +169,16 @@ const eventos = () =>{
     }
     //btn decrementar
     if(e.target.classList == 'derecease btn btn-danger fw-bolder'){
-      console.log('btn decrementar');
+      const id = e.target.parentNode.parentNode.id;
+      console.log(id);
+      
+      //console.log('btn decrementar');
     }
 
     //btn incrementar
     if (e.target.classList == 'increase btn btn-success fw-bolder') {
+      const id = e.target.parentNode.parentNode.id;
+      console.log(id);
       console.log('btn incrementar');
     }
 
