@@ -6,17 +6,22 @@ import { crearProductoHTML, init } from "./js/main";
 
 
 export const productoLista = new ProductoList ();
+/*
 const producto =new Producto('Vestido',2, '6 meses', 20);
 const productoSinTalla =new Producto('cuna',3, '--sin talla--', 45.20);
 productoLista.nuevoProducto(producto);
-productoLista.nuevoProducto(productoSinTalla);
+productoLista.nuevoProducto(productoSinTalla);*/
 //console.log(productoLista);
 
 init();
 
-crearProductoHTML(producto);
 
-crearProductoHTML(productoSinTalla);
+
+/*utilizamos el foreach
+crearProductoHTML(producto);
+crearProductoHTML(productoSinTalla);*/
+productoLista.productos.forEach(producto => crearProductoHTML(producto));
+
 
 
 

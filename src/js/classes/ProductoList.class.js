@@ -5,8 +5,9 @@ export class ProductoList {
 
 
     constructor(){
-        this.productos=[];
-        //this.cargarLocalStorage();
+        //this.productos=[];
+        //comentamos el array porque cargar LS ya nos lo inicializa vacio si no hay nada
+        this.cargarLocalStorage();
         //console.log(this.productos);
     }
 
@@ -16,8 +17,9 @@ export class ProductoList {
         this.guardarLocalStorage();
     }
     eliminarProducto(id){
-        //regresa arreglo de los que no coinciden con el id
+        //regresa arreglo excluyendo el que coincide con el id
         this.productos = this.productos.filter( producto => producto.id != id );
+        this.guardarLocalStorage();
 
     }
 
@@ -32,9 +34,11 @@ export class ProductoList {
         this.productos=(localStorage.getItem('Producto'))?
             JSON.parse(localStorage.getItem('Producto')):[];
         
+            
         //this.productos = this.productos.map( Producto.fromJson ); 
     }
 
-
+    
+    //btn para incrementar y decrementar
 }
 
