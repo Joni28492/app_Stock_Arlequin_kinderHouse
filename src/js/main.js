@@ -28,10 +28,7 @@ const temas = [
 const body = document.body;
 const logo = document.querySelector("img");
 const btnAgregar = document.querySelector('#agregar');
-let btnIncrementar = document.querySelectorAll('.increase');
-let btnDecrementar = document.querySelectorAll('.derecease');
-let btnEliminarProducto = document.querySelectorAll('.eliminarProducto');
-
+const titulo = document.querySelector('h1');
 
 ///Listado de productos
 const ulListaProducto = document.querySelector('#listaProductos');
@@ -131,8 +128,8 @@ const eventos = () =>{
     const cantidad =inputCantidad.value;
     const talla    =inputTalla.value;//la talla te da la posición
     const precio   =inputPrecio.value;
-    //validamos que no este vacio
-    if(nombre!=='' && !(cantidad<=0) && !(precio<=0)){
+    //validamos que no este vacio, hay que parsearlo porque el input lo trae como string
+    if(nombre!=='' && !(cantidad<=0) && !(precio<=0) && Number.isInteger(parseInt(cantidad))){
       
       const nuevoProducto = new Producto(nombre, cantidad, talla, precio);
       productoLista.nuevoProducto(nuevoProducto);
@@ -142,14 +139,22 @@ const eventos = () =>{
       inputCantidad.value='';
       inputPrecio.value='';
       
-    }else{
-      console.warn('Esta vacio');
-     
-    }
+    }else{//posiobilidad de convertir a promise
+      
+      const alerta=document.createElement('div');
+      alerta.classList='alert alert-warning text-danger container rounded shadow fs-5  mt-4 w-10';
+      alerta.textContent='formato no valido- err';
 
+      titulo.append(alerta);
+           
+      setTimeout(() => {
+        alerta.remove();
+      }, 3000);
+      
 
-  
-    
+      
+
+    }  
 
   });
 
@@ -179,7 +184,7 @@ const eventos = () =>{
     if (e.target.classList == 'increase btn btn-success fw-bolder') {
       const id = e.target.parentNode.parentNode.id;
       console.log(id);
-      console.log('btn incrementar');
+      //console.log('btn incrementar');
     }
 
   });
