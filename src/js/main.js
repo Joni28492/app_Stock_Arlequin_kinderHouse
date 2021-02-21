@@ -200,18 +200,48 @@ const eventos = () =>{
 
 
 
-
+  ////  ESTOS NO SE SI FUNCIONARAN
+  const parent = btnCargarJson.parentNode;
+  const hr = document.createElement('hr');
   //BTN CARGAR Y DESCARGAR JSON
-  btnCargarJson.addEventListener('click', ()=>{
-    console.log('btn para subir JSON');
+  btnCargarJson.addEventListener('click', (e)=>{
     
+    btnCargarJson.disabled=true;
+    const div = document.createElement('div');
+    const btnActualizar = document.createElement('button');
+    const textArea = document.createElement('textarea');
+    div.classList="container text-center fs-3 p-2";
+    div.innerHTML='<strong>Recuerda que el formato ha de ser válido</strong>';
+   
+    btnActualizar.textContent = 'Guardar'
+    btnActualizar.classList='col btn btn-info fw-bolder text-white  m-2';
+    textArea.placeholder = 'Intrduce aquí el contenido del archivo .json que has descargado de esta app y actualiza';
+    parent.append(div, hr, textArea, btnActualizar);
+
+    btnActualizar.addEventListener('click', () =>{
+      //si no controlamos que este vacio se borrara todo
+      if(textArea.value !== '') localStorage.setItem('Producto', textArea.value);
+      
+    });
+
   });
 
 
   btnDescargarJson.addEventListener('click', ()=>{
-    console.log('btn para descargar tus datos');
+   
     const tempJSON = JSON.parse(localStorage.getItem('Producto'));
-    //console.log(tempJSON);
+    const div = document.createElement('div');
+ 
+    const inst = document.createElement('small');
+    inst.textContent='Guarda el párrafo en un archivo.json para conservar tus datos, actualiza para limpiar ';
+    inst.classList='text-center';
+    const p =document.createElement('p');
+    p.textContent=JSON.stringify(tempJSON);
+    div.classList="container text-center fs-3";
+    div.innerHTML='<strong>copia el siguiente párrafo</strong>';
+    parent.append(div, hr,inst,hr,p);
+    btnDescargarJson.disabled = true;
+    
   })
 
 }
