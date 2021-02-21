@@ -71,19 +71,19 @@ const selectOption = (talla) =>{
 
 const crearProductoHTML = (producto) =>{
 
-   
-
+  if (producto.cantidad != 0) {
+    
     const htmlProducto = `
       <li class="w-25">${producto.producto}</li>
       <li class="w-25 ">
         <button class="derecease btn btn-danger fw-bolder">-</button>
-        ${producto.cantidad}
+        <span>${producto.cantidad}</span>
         <button  class="increase btn btn-success fw-bolder">+</button>
       </li>
       <li class="w-25 ${(producto.talla === '--sin talla--') ? 'text-danger':''}">${selectOption(producto.talla)}</li>
       <li class="w-25">${producto.precio} €</li>
       <button  class="eliminarProducto btn btn-danger fw-bolder">X</button>
-    `;//arreglar tallas
+    `;
 
     const ul = document.createElement('ul');
     ul.classList='list-group list-group-horizontal container list-unstyled m-2';
@@ -93,6 +93,8 @@ const crearProductoHTML = (producto) =>{
     ulListaProducto.append(ul);
     
     return ul;
+  }
+  
   
 }
 
@@ -146,7 +148,7 @@ const eventos = () =>{
       alerta.textContent='formato no valido- err';
 
       titulo.append(alerta);
-           
+      
       setTimeout(() => {
         alerta.remove();
       }, 3000);
@@ -172,18 +174,25 @@ const eventos = () =>{
       parent.remove();
       
     }
-    //btn decrementar
+    //btn decrementar :: listo
     if(e.target.classList == 'derecease btn btn-danger fw-bolder'){
       const id = e.target.parentNode.parentNode.id;
-      console.log(id);
+      const ulParent = e.target.parentNode.parentNode;
+      const contenedorElemento =e.target.nextElementSibling;
+      productoLista.decrementar(id, ulParent);
+
+      contenedorElemento.textContent = parseInt(contenedorElemento.textContent)-1;
+      if (contenedorElemento.textContent == 0) {productoLista.eliminarProducto(id);}
       
-      //console.log('btn decrementar');
     }
 
-    //btn incrementar
+    //btn incrementar::listo
     if (e.target.classList == 'increase btn btn-success fw-bolder') {
       const id = e.target.parentNode.parentNode.id;
-      console.log(id);
+      const contenedorElemento = e.target.previousElementSibling;
+      //console.log(contenedorElemento);
+      productoLista.incrementar(id);
+      contenedorElemento.textContent = parseInt(contenedorElemento.textContent)+1;
       //console.log('btn incrementar');
     }
 

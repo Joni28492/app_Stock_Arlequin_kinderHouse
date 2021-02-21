@@ -1,0 +1,51 @@
+[
+    {
+        "producto": "canastilla",
+        "id": "d67f8645-e4f2-47d1-a79b-7f498bfcb6af",
+        "cantidad": 1,
+        "talla": "--sin talla--",
+        "precio": "25"
+    },
+    {
+        "producto": "pantalon",
+        "id": "ac6741f6-04e0-4af5-ac43-cce0759688cb",
+        "cantidad": "3",
+        "talla": "4",
+        "precio": "30"
+    },
+    {
+        "producto": "silla",
+        "id": "b5253a9a-ab21-4d46-bfef-2f3a1a5a933b",
+        "cantidad": "8",
+        "talla": "--sin talla--",
+        "precio": "350"
+    },
+    {
+        "producto": "collar",
+        "id": "53f5b3cd-54be-4d5b-ba0b-440dac6cadbd",
+        "cantidad": "2",
+        "talla": "--sin talla--",
+        "precio": "5"
+    },
+    {
+        "producto": "rueda",
+        "id": "635bc6f7-18e3-4bc6-9eb5-70bddd846734",
+        "cantidad": "3",
+        "talla": "--sin talla--",
+        "precio": "50"
+    },
+    {
+        "producto": "jersey",
+        "id": "eee0cc6a-f52b-4a95-8ddd-d37eba097337",
+        "cantidad": "4",
+        "talla": "2",
+        "precio": "60"
+    },
+    {
+        "producto": "capazo",
+        "id": "2adc1698-864d-4f94-ad35-9edff93ea6e7",
+        "cantidad": "3",
+        "talla": "--sin talla--",
+        "precio": "85"
+    }
+]

@@ -2,7 +2,17 @@ const {v4: uuidv4} = require('uuid');
 
 export class Producto {
 
-  
+  static fromJson({producto, id, cantidad, talla, precio}){
+    const tempProducto = new Producto(producto);
+
+    tempProducto.id       = id;
+    tempProducto.cantidad = cantidad;    
+    tempProducto.talla    = talla;
+    tempProducto.precio   = precio;
+
+
+    return tempProducto;
+  }
   
 
 

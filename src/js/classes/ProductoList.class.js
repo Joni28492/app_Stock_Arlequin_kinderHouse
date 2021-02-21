@@ -1,3 +1,5 @@
+import { productoLista } from "../..";
+import { crearProductoHTML } from "../main";
 import { Producto } from "./Producto.class";
 
 
@@ -30,15 +32,35 @@ export class ProductoList {
     }
 
 
-    cargarLocalStorage(){//problemas con el static y Producto
+    cargarLocalStorage(){
         this.productos=(localStorage.getItem('Producto'))?
             JSON.parse(localStorage.getItem('Producto')):[];
         
-            
-        //this.productos = this.productos.map( Producto.fromJson ); 
+        //propiedad estatica
+        this.productos = this.productos.map( Producto.fromJson ); 
     }
 
     
     //btn para incrementar y decrementar
+    decrementar(id, parent){
+      
+    
+        const getLocalStorage = JSON.parse(localStorage.getItem('Producto'));
+        //console.log(getLocalStorage);
+        getLocalStorage.forEach(producto => {
+            if (producto.id == id) { producto.cantidad-- ;
+                if (producto.cantidad == 0) parent.remove();
+            }
+        });
+
+        localStorage.setItem('Producto', JSON.stringify(getLocalStorage));
+    }
+
+    incrementar(id){
+
+        const getLocalStorage = JSON.parse(localStorage.getItem('Producto'));
+        getLocalStorage.forEach(producto => {if (producto.id == id) producto.cantidad++;});
+        localStorage.setItem('Producto', JSON.stringify(getLocalStorage));
+    }
 }
 
