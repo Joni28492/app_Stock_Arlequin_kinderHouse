@@ -144,8 +144,8 @@ const eventos = () =>{
     }else{//posiobilidad de convertir a promise
       
       const alerta=document.createElement('div');
-      alerta.classList='alert alert-warning text-danger container rounded shadow fs-5  mt-4 w-10';
-      alerta.textContent='formato no valido- err';
+      alerta.classList='alert fw-bold bg-warning text-danger container rounded rounded-pill shadow fs-3  mt-4  border border-danger border-5';
+      alerta.textContent='Te faltan campos por rellenar o los datos introducidos no son correctos';
 
       titulo.append(alerta);
       
