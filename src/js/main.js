@@ -98,6 +98,14 @@ const crearProductoHTML = (producto) =>{
   
 }
 
+const copiarPortapapeles= (elemento) =>{
+  // console.log(elemento.textContent);
+  elemento.select();
+  elemento.setSelectionRange(0, elemento.length);
+  document.execCommand("copy");
+  
+}
+
 const eventos = () =>{
 
   //con el click modificamos el logo y el tema de fondo
@@ -235,14 +243,23 @@ const eventos = () =>{
     const inst = document.createElement('small');
     inst.textContent='Guarda el párrafo en un archivo.json para conservar tus datos, actualiza para limpiar ';
     inst.classList='text-center';
-    const p =document.createElement('pre');
-    p.textContent=JSON.stringify(tempJSON, null, 3);
+    // const pre =document.createElement('pre');
+    // pre.textContent=JSON.stringify(tempJSON, null, 3);
+    const input =document.createElement('input');
+    input.value=JSON.stringify(tempJSON, null, 3);
+
     div.classList="container text-center fs-3";
     div.innerHTML='<strong>copia el siguiente párrafo</strong>';
-    parent.append(div, hr,inst,hr,p);
+    parent.append(div, hr,inst,hr,input);
     btnDescargarJson.disabled = true;
     
-  })
+
+    //hacemos que el pre tenga copy
+    input.addEventListener('click', ()=>{
+      copiarPortapapeles(input);
+    });
+
+  });
 
 }
 

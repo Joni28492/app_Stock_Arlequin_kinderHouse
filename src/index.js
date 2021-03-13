@@ -22,7 +22,7 @@ crearProductoHTML(producto);
 crearProductoHTML(productoSinTalla);*/
 productoLista.productos.forEach(producto => crearProductoHTML(producto));
 
-console.log(productoLista.productos);
+// console.log(productoLista.productos);
 //console.log('productos', productoLista.productos);
 
 
